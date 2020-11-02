@@ -2,7 +2,7 @@
 
 # **#info** #
 
-![header_pres](https://github.com/isaelblais/ng-file-upload-socket-io/tree/master/md/preview1.png)
+![header_pres](https://github.com/isaelblais/ng-file-upload-socket-io/blob/master/md/preview1.PNG)
 
 #### changes:
 
