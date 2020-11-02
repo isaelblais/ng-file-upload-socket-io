@@ -1,0 +1,66 @@
+.card-file-upload-container {
+    .success {
+          background-color: #28a745 !important;
+    }
+
+    .warning {
+          color: #343a40 !important;
+          background-color: #ffc107 !important;
+    }
+
+    .error {
+          background-color: #dc3545 !important; 
+    }
+
+    .card-title {
+          padding: 5px 0px 15px 0px;
+          border-bottom: 1px solid rgba(184, 184, 184, 0.3);
+    }
+
+    .card-content {
+          min-height: 100px;
+          justify-content: center;
+
+          .no-file-selected {
+                text-align: center;
+          }
+
+          .file-list {
+                .file-row {
+                      padding: 6px 6px 6px 0px;
+                }
+                .file-actions {
+                      button {
+                            color: white;
+                      }
+                }
+          }
+    }
+
+    .card-actions {
+          padding: 10px 0px 5px 0px;
+          border-top: 1px solid rgba(184, 184, 184, 0.3);
+    }
+
+    .mat-flat-button.small {
+          min-width: 24px;
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+
+          padding: 0px 0px 0px 0px;
+          .mat-icon {
+                font-size: 18px;
+                width: 18px;
+                height: 18px;
+                line-height: 18px;
+          }
+          .mat-ripple,
+          .mat-button-ripple {
+                font-size: inherit;
+                width: inherit;
+                height: inherit;
+                line-height: inherit;
+          }
+    }
+}

@@ -1,0 +1,51 @@
+<div class="container" fxFlexFill fxLayoutAlign="center center">
+
+    <mat-card class="card-file-upload-container" fxFlex="60%">
+  
+      <mat-card-title class="card-title">File upload</mat-card-title>
+  
+      <mat-card-content *ngIf="files.length <= 0" fxLayoutAlign="center center" class="card-content">
+        <div class="no-file-selected" fxFlexFill>No files selected !</div>
+      </mat-card-content>
+  
+      <mat-card-content *ngIf="files.length > 0" class="card-content">
+        <mat-list class="file-list">
+          <mat-list-item *ngFor="let file of files" [@fadeIn]="file.state">
+  
+            <div class="file-row"  matLine fxLayout="row">
+              <span fxFlex>
+                {{file.data.name}}
+              </span>
+              <span class="file-actions" fxFlex fxLayoutAlign="end start" fxLayoutGap="10px">
+                <button mat-flat-button class="small error" (click)="cancelFile(file)" *ngIf="file.canCancel">
+                  <mat-icon>clear</mat-icon>
+                </button>
+                <button mat-flat-button class="small warning" (click)="retryFile(file)" *ngIf="file.canRetry">
+                  <mat-icon>refresh</mat-icon>
+                </button>
+                <button mat-flat-button color="primary" class="small" (click)="uploadFile(file)">
+                  <mat-icon>upload_file</mat-icon>
+                </button>
+              </span>
+            </div>
+            <div matLine>
+              <mat-progress-bar mode="determinate" [value]="file.socket.status | async"></mat-progress-bar>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+  
+      <mat-card-actions class="card-actions" align="end" fxLayoutGap="10px">
+        <button mat-flat-button color="primary" (click)="onClick()">
+          <mat-icon>create_new_folder</mat-icon>
+          Add files
+        </button>
+        <button mat-flat-button color="primary" (click)="uploadFiles()" [disabled]="files.length <= 0">
+          <mat-icon>cloud_upload</mat-icon>
+          Upload files
+        </button>
+      </mat-card-actions>
+  
+    </mat-card>
+    <input #fileUploadInput type="file" id="fileUpload" name="fileUpload" multiple="multiple" style="display:none;" />
+  </div>
